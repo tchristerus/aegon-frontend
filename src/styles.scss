@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: rgb(174, 208, 238);
+  background: radial-gradient(circle, rgba(174, 208, 238, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}

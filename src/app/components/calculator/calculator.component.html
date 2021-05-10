@@ -1,0 +1,17 @@
+<div class="flex-container">
+  <div class="row">
+    <div class="flex-item">
+      <input type="text" [(ngModel)]="a">
+      <select [(ngModel)]="selectedOperation">
+        <option *ngFor="let operation of operations"
+                [value]="operation">
+          {{operation}}
+        </option>
+      </select>
+      <input type="text" [(ngModel)]="b">
+      <div class="break"></div>
+      <button class="submit full-width" (click)="calculate()">Calculate</button>
+
+    </div>
+  </div>
+</div>

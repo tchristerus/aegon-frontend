@@ -1,14 +1,14 @@
 import {Operations} from '../components/enums/Operations';
 
 export class Calculation {
-  public a: number;
-  public b: number;
+  public num1: number;
+  public num2: number;
   public operation: Operations;
   public result: number;
 
-  constructor(a: number, b: number, operation: Operations, result: number) {
-    this.a = a;
-    this.b = b;
+  constructor(num1: number, num2: number, operation: Operations, result: number) {
+    this.num1 = num1;
+    this.num2 = num2;
     this.operation = operation;
     this.result = result;
   }

@@ -8,3 +8,8 @@ body {
   background: rgb(174, 208, 238);
   background: radial-gradient(circle, rgba(174, 208, 238, 1) 0%, rgba(148, 187, 233, 1) 100%);
 }
+
+.full-width {
+  flex: 0 0 100%;
+}
+

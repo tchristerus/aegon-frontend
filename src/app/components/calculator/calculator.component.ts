@@ -12,8 +12,8 @@ export class CalculatorComponent implements OnInit {
 
   public operations = Object.values(Operations);
   selectedOperation: Operations = Operations.ADD;
-  a: string = '0';
-  b: string = '0';
+  a = '0';
+  b = '0';
 
   constructor(private httpClient: HttpClient) {
   }
@@ -22,14 +22,13 @@ export class CalculatorComponent implements OnInit {
 
   }
 
-  calculate() {
+  calculate(): void {
     this.httpClient.get(`http://localhost:8080/api/calculation/${this.a}/${this.b}/${this.selectedOperation}`).toPromise().then(res => {
-      console.log(res);
+      this.history();
     });
-    this.history();
   }
 
-  history() {
+  history(): void {
     this.httpClient.get<Calculation[]>('http://localhost:8080/api/calculation').subscribe(res => {
       console.table(res);
     });

@@ -4,9 +4,7 @@ The Aegon calculator is an assessment given by Aegon. This repo is contains the 
 calculator.
 
 ## Info
-
-Port: 4200  
-swagger url: http://localhost:8080/swagger-ui/
+Port: 4200
 
 ## How to run
 

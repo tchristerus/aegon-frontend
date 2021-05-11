@@ -24,8 +24,8 @@ describe('HistoryService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should be an empty array at start', (done) => {
-    service.loadInitialHistory();
+  it('should fetch history calculations', (done) => {
+    // service.loadInitialHistory();
     const historyRequests = httpMock.expectOne('http://localhost:8080/api/calculation');
     expect(historyRequests.request.method).toBe('GET');
     // httpMock.verify();

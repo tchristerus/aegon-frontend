@@ -4,7 +4,7 @@
       <app-history class="full-width"></app-history>
     </div>
     <div class="flex-item">
-      <input type="number" [(ngModel)]="a" oninput="this.value=(parseInt(this.value)||0)">
+      <input id="num1" type="number" [(ngModel)]="a" oninput="this.value=(parseInt(this.value)||0)">
       <select [(ngModel)]="selectedOperation">
         <option *ngFor="let operation of operations"
                 [value]="operation">

@@ -29,3 +29,5 @@ Due to the deadline I was not able to finish the unit tests for the front-end. F
 what I should have done when I had more time. First I would mock the httpclient and make sure that the results match the
 back-end.  
 
+Also I would have like to write unit tests for all the interaction with the components. Verifying the binding etc. Only 1 tests exists for this case (Calculator.component.spec.ts:35)
+

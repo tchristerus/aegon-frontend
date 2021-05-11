@@ -17,10 +17,6 @@ Then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-### Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
 ## Deadline issues :)
 
 Due to the deadline I was not able to finish the unit tests for the front-end. For that reason I am going to describe

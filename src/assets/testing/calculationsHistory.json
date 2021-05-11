@@ -1,0 +1,14 @@
+[
+  {
+    "num1": 0,
+    "num2": 0,
+    "operation": "ADD",
+    "result": 0.0
+  },
+  {
+    "num1": 5,
+    "num2": 2,
+    "operation": "DIVIDE",
+    "result": 2.5
+  }
+]

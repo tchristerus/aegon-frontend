@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: lato;
+  src: url(assets/fonts/Roboto-Regular.ttf) format("opentype");
+}
+
 html, body {
   height: 100%;
 }
@@ -6,7 +11,8 @@ html, body {
 body {
   margin: 0;
   background: rgb(174, 208, 238);
-  background: radial-gradient(circle, rgba(174, 208, 238, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  background: radial-gradient(circle, rgba(174, 208, 238, 1) 0%, rgb(125, 175, 239) 100%);
+  font-family: 'lato', 'arial', sans-serif;
 }
 
 .full-width {

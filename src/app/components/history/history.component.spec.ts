@@ -1,16 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HistoryComponent } from './history.component';
+import {HistoryComponent} from './history.component';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 
 describe('HistoryComponent', () => {
   let component: HistoryComponent;
   let fixture: ComponentFixture<HistoryComponent>;
+  let httpMock: HttpTestingController;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HistoryComponent ]
+      imports: [
+        HttpClientTestingModule
+      ],
+      declarations: [HistoryComponent]
     })
-    .compileComponents();
+      .compileComponents();
+    httpMock = TestBed.inject(HttpTestingController);
   });
 
   beforeEach(() => {

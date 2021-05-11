@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Operations} from '../enums/Operations';
 import {HttpClient} from '@angular/common/http';
+import {HistoryService} from '../../services/history.service';
 import {Calculation} from '../../models/calculation.model';
+import {ICalculationResult} from '../../interfaces/ICalculationResult';
 
 @Component({
   selector: 'app-calculator',
@@ -12,10 +14,10 @@ export class CalculatorComponent implements OnInit {
 
   public operations = Object.values(Operations);
   selectedOperation: Operations = Operations.ADD;
-  a = '0';
-  b = '0';
+  a = 0;
+  b = 0;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private historyService: HistoryService) {
   }
 
   ngOnInit(): void {
@@ -23,14 +25,14 @@ export class CalculatorComponent implements OnInit {
   }
 
   calculate(): void {
-    this.httpClient.get(`http://localhost:8080/api/calculation/${this.a}/${this.b}/${this.selectedOperation}`).toPromise().then(res => {
-      this.history();
+    this.httpClient.get<ICalculationResult>(`http://localhost:8080/api/calculation/${this.a}/${this.b}/${this.selectedOperation}`)
+      .toPromise().then(res => {
+      this.history(res.result);
     });
   }
 
-  history(): void {
-    this.httpClient.get<Calculation[]>('http://localhost:8080/api/calculation').subscribe(res => {
-      console.table(res);
-    });
+  history(result: number): void {
+    const historyCalculation = new Calculation(this.a, this.b, this.selectedOperation, result);
+    this.historyService.addHistory(historyCalculation);
   }
 }

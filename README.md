@@ -1,27 +1,31 @@
 # AegonCalculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+The Aegon calculator is an assessment given by Aegon. This repo is contains the front-end required to run the
+calculator.
 
-## Development server
+## Info
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Port: 4200  
+swagger url: http://localhost:8080/swagger-ui/
 
-## Code scaffolding
+## How to run
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+First install the required packages using `npm install`  
+Then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Build
+## Tests
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
+### Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Deadline issues :)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Due to the deadline I was not able to finish the unit tests for the front-end. For that reason I am going to describe
+what I should have done when I had more time. First I would mock the httpclient and make sure that the results match the
+back-end.  
+

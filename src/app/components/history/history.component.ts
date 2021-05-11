@@ -11,7 +11,7 @@ export class HistoryComponent implements OnInit {
 
   history: Calculation[];
 
-  constructor(private historyService: HistoryService) {
+  constructor(public historyService: HistoryService) {
     this.history = [];
   }
 
@@ -20,9 +20,9 @@ export class HistoryComponent implements OnInit {
   }
 
   public update(): void {
-    this.historyService.getHistory().then(history => {
-      this.history = history;
-      console.table(history);
-    });
+    // this.historyService.getHistory().then(history => {
+    //   this.history = history;
+    //   console.table(history);
+    // });
   }
 }

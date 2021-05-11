@@ -1,21 +1,20 @@
 <div class="flex-container">
-
   <div class="row">
     <div class="flex-item">
       <app-history class="full-width"></app-history>
     </div>
     <div class="flex-item">
-      <input type="text" [(ngModel)]="a">
+      <input type="number" [(ngModel)]="a" oninput="this.value=(parseInt(this.value)||0)">
       <select [(ngModel)]="selectedOperation">
         <option *ngFor="let operation of operations"
                 [value]="operation">
           {{operation}}
         </option>
       </select>
-      <input type="text" [(ngModel)]="b">
+      <input type="number" [(ngModel)]="b" oninput="this.value=(parseInt(this.value)||0)">
     </div>
     <div class="flex-item">
-      <button class="submit full-width" (click)="calculate()">Calculate</button>
+      <button class="submit full-width" (click)="calculate();">Calculate</button>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import {Calculation} from './calculation.model';
-import {Operations} from '../components/enums/Operations';
+import {Operations} from './enums/Operations';
 
 describe('Calculation', () => {
   it('should create an instance', () => {

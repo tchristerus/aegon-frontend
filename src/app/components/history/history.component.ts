@@ -16,13 +16,6 @@ export class HistoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.update();
-  }
 
-  public update(): void {
-    // this.historyService.getHistory().then(history => {
-    //   this.history = history;
-    //   console.table(history);
-    // });
   }
 }

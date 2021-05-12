@@ -1,4 +1,4 @@
-import {Operations} from '../components/enums/Operations';
+import {Operations} from './enums/Operations';
 
 export class Calculation {
   public num1: number;

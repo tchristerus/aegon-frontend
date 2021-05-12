@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Operations} from '../enums/Operations';
-import {HttpClient} from '@angular/common/http';
+import {Operations} from '../../models/enums/Operations';
 import {HistoryService} from '../../services/history.service';
 import {Calculation} from '../../models/calculation.model';
 import {ICalculationResult} from '../../interfaces/ICalculationResult';
+import {ICalculationRequest} from '../../interfaces/ICalculationRequest';
+import {HttpService} from '../../services/http.service';
 
 @Component({
   selector: 'app-calculator',
@@ -17,7 +18,7 @@ export class CalculatorComponent implements OnInit {
   a = 0;
   b = 0;
 
-  constructor(private httpClient: HttpClient, private historyService: HistoryService) {
+  constructor(private httpService: HttpService, private historyService: HistoryService) {
   }
 
   ngOnInit(): void {
@@ -25,9 +26,12 @@ export class CalculatorComponent implements OnInit {
   }
 
   calculate(): void {
-    this.httpClient.get<ICalculationResult>(`http://localhost:8080/api/calculation/${this.a}/${this.b}/${this.selectedOperation}`)
-      .toPromise().then(res => {
-      this.history(res.result);
+    const calculationData: ICalculationRequest = {num1: this.a, num2: this.b};
+    this.httpService.post<ICalculationResult>(`/calculation/${this.selectedOperation}`, JSON.stringify(calculationData))
+      .then(res => {
+        this.history(res.result);
+      }).catch(res => {
+      alert(res.error.error);
     });
   }
 
